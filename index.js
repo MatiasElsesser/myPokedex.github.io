@@ -39,7 +39,9 @@ const renderPokemonData = (data) => {
       const sprite = data.sprites.front_default; //imagen por defecto
       const {stats, types} = data;
 
-      pokeName.textContent = data.name;
+      const nomUpCasse = data.name;
+      pokeName.textContent = nomUpCasse.charAt(0).toUpperCase() + nomUpCasse.slice(1);
+
       pokeImg.setAttribute("src", sprite)
       pokeId.textContent = `N° ${data.id}`;
 
@@ -69,6 +71,7 @@ const renderPokemonTypes = (types) => {
 
             pokeTypes.appendChild(typeTextElement);
       });
+      pokeTypes.style.border = "2px solid #000"
 }
 
 
